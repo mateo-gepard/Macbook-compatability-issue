@@ -38,12 +38,12 @@ function checkSerial() {
     const serial = serialInput.value.trim().toUpperCase();
     
     if (!serial) {
-        showResult(resultDiv, 'Please enter a serial number.', 'affected');
+        showResult(resultDiv, 'Bitte geben Sie eine Seriennummer ein.', 'affected');
         return;
     }
     
     if (serial.length < 11) {
-        showResult(resultDiv, 'Please enter a valid serial number (at least 11 characters).', 'affected');
+        showResult(resultDiv, 'Bitte geben Sie eine gültige Seriennummer ein (mindestens 11 Zeichen).', 'affected');
         return;
     }
     
@@ -51,13 +51,13 @@ function checkSerial() {
     // You can make this more sophisticated if needed
     setTimeout(() => {
         const message = `
-            <strong>Device Status: Affected</strong><br><br>
-            Your MacBook Pro (Serial: ${serial}) is affected by the January 1, 2026 compatibility deadline.<br><br>
-            <strong>Model Information:</strong><br>
-            • MacBook Pro with Intel Processor<br>
-            • Manufactured before 2021<br>
-            • Not compatible with required security updates<br><br>
-            We recommend upgrading to a new MacBook Pro with Apple Silicon before the deadline.
+            <strong>Gerätestatus: Betroffen</strong><br><br>
+            Ihr MacBook Pro (Seriennummer: ${serial}) ist von der Kompatibilitätsfrist zum 1. Januar 2026 betroffen.<br><br>
+            <strong>Modellinformationen:</strong><br>
+            • MacBook Pro mit Intel-Prozessor<br>
+            • Hergestellt vor 2021<br>
+            • Nicht kompatibel mit erforderlichen Sicherheitsupdates<br><br>
+            Wir empfehlen ein Upgrade auf ein neues MacBook Pro mit Apple Silicon vor Ablauf der Frist.
         `;
         showResult(resultDiv, message, 'affected');
     }, 800);
